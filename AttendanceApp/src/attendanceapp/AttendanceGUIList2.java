@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package attendanceapp;
-
+import java.io.*;
+import java.util.*;
 /**
  *
  * @author Chris
@@ -193,6 +194,11 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
         jButton1.setText("Submit");
 
         jButton2.setText("Load");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("12");
 
@@ -918,6 +924,24 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String inputFile = jComboBox1.getSelectedItem().toString()+".txt";
+        try {
+            File file = new File(inputFile);
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String[] lists = new String[30];
+            for (int z=0; z<=29; z++){
+                lists[z]=bufferedReader.readLine();
+            }
+            jLabel7.setText(lists[0]);
+            jLabel8.setText(lists[1]);
+            jLabel9.setText(lists[2]);
+            }catch(Exception a){
+            jLabel7.setText(""+a);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
