@@ -5,7 +5,6 @@
  */
 package attendanceapp;
 import java.io.*;
-import java.util.*;
 /**
  *
  * @author Chris
@@ -931,7 +930,6 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
             File file = new File(inputFile);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String[] lists = new String[30];
             for (int z=0; z<=29; z++){
                 lists[z]=bufferedReader.readLine();
             }
@@ -942,7 +940,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
             jLabel7.setText(""+a);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    String[] lists = new String[30];
     /**
      * @param args the command line arguments
      */
@@ -969,7 +967,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AttendanceGUIList2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
