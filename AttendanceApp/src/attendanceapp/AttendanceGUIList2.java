@@ -5,18 +5,18 @@
  */
 package attendanceapp;
 import java.io.*;
+import javax.swing.JLabel;
 /**
  *
  * @author Chris
  */
 public class AttendanceGUIList2 extends javax.swing.JFrame {
-
     /**
      * Creates new form AttendanceGUIList2
      */
     public AttendanceGUIList2() {
         initComponents();
-    }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -926,18 +926,17 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String inputFile = jComboBox1.getSelectedItem().toString()+".txt";
+        JLabel[] jLLists = {jLabel7,jLabel8,jLabel9,jLabel10,jLabel11,jLabel12,jLabel13,jLabel14,jLabel15,jLabel16,jLabel17,jLabel18,jLabel19,jLabel20,jLabel21,jLabel22,jLabel23,jLabel24,jLabel25,jLabel26,jLabel27,jLabel28,jLabel29,jLabel30,jLabel31,jLabel32,jLabel33,jLabel34,jLabel35,jLabel36};
         try {
             File file = new File(inputFile);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             for (int z=0; z<=29; z++){
                 lists[z]=bufferedReader.readLine();
+                jLLists[z].setText(lists[z]);
             }
-            jLabel7.setText(lists[0]);
-            jLabel8.setText(lists[1]);
-            jLabel9.setText(lists[2]);
             }catch(Exception a){
-            jLabel7.setText(""+a);
+            jTextField32.setText(""+a);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     String[] lists = new String[30];
