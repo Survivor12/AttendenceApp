@@ -53,7 +53,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jTextField1" min="-2" pref="76" max="-2" attributes="0"/>
-                              <EmptySpace min="86" pref="248" max="32767" attributes="0"/>
+                              <EmptySpace min="86" pref="251" max="32767" attributes="0"/>
                               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -121,12 +121,11 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
+          <StringArray count="4">
             <StringItem index="0" value=""/>
-            <StringItem index="1" value="DNK4U"/>
-            <StringItem index="2" value="Item 2"/>
-            <StringItem index="3" value="Item 3"/>
-            <StringItem index="4" value="Class of Me"/>
+            <StringItem index="1" value="BBB4M.-01"/>
+            <StringItem index="2" value="BBB4M.-02"/>
+            <StringItem index="3" value="BMI3C.-01"/>
           </StringArray>
         </Property>
       </Properties>

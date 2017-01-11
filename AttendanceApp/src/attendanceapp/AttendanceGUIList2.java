@@ -173,7 +173,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
         jTextField1.setEditable(false);
         jTextField1.setText("07/12/2016");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "DNK4U", "Item 2", "Item 3", "Class of Me" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "BBB4M.-01", "BBB4M.-02", "BMI3C.-01" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -876,7 +876,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(86, 248, Short.MAX_VALUE)
+                                .addGap(86, 251, Short.MAX_VALUE)
                                 .addComponent(jButton2)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton1))
@@ -925,7 +925,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String inputFile = jComboBox1.getSelectedItem().toString()+".txt";
+        String inputFile = jComboBox1.getSelectedItem().toString()+"/"+jComboBox1.getSelectedItem().toString()+".txt";
         JLabel[] jLLists = {jLabel7,jLabel8,jLabel9,jLabel10,jLabel11,jLabel12,jLabel13,jLabel14,jLabel15,jLabel16,jLabel17,jLabel18,jLabel19,jLabel20,jLabel21,jLabel22,jLabel23,jLabel24,jLabel25,jLabel26,jLabel27,jLabel28,jLabel29,jLabel30,jLabel31,jLabel32,jLabel33,jLabel34,jLabel35,jLabel36};
         try {
             File file = new File(inputFile);
