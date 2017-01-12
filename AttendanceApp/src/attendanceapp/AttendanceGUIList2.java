@@ -6,6 +6,8 @@
 package attendanceapp;
 import java.io.*;
 import javax.swing.JLabel;
+import java.text.*;
+import java.util.*;
 /**
  *
  * @author Chris
@@ -925,6 +927,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Date();
         String inputFile = jComboBox1.getSelectedItem().toString()+"/"+jComboBox1.getSelectedItem().toString()+".txt";
         JLabel[] jLLists = {jLabel7,jLabel8,jLabel9,jLabel10,jLabel11,jLabel12,jLabel13,jLabel14,jLabel15,jLabel16,jLabel17,jLabel18,jLabel19,jLabel20,jLabel21,jLabel22,jLabel23,jLabel24,jLabel25,jLabel26,jLabel27,jLabel28,jLabel29,jLabel30,jLabel31,jLabel32,jLabel33,jLabel34,jLabel35,jLabel36};
         try {
@@ -940,9 +943,13 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     String[] lists = new String[30];
+    String timeStamp = new SimpleDateFormat("MM/dd/yyyy").format(Calendar.getInstance().getTime());
     /**
      * @param args the command line arguments
      */
+    private void Date(){
+        jTextField1.setText(timeStamp);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
