@@ -5,6 +5,7 @@
  */
 package attendanceapp;
 import java.util.Arrays;
+import javax.swing.*;
 /**
  *
  * @author S199750655
@@ -172,7 +173,22 @@ public class AttendanceGUILogin extends javax.swing.JFrame {
         jLabel4.setText(null);
         char[] input = jPasswordField1.getPassword();
         if (jTextField4.getText().equals("Username")&&isPasswordCorrect(input)) {
-           
+            Clear();
+            SwingUtilities.invokeLater(new Runnable() {
+               public void run(){
+                   final AttendanceGUIList2 open = new AttendanceGUIList2();
+                   open.AttendanceGUIList2();
+                   open.setVisible(true);
+                   setVisible(false);
+               } 
+            });
+//            AttendanceGUIList2 open = new AttendanceGUIList2();
+//            JFrame frame = new JFrame();
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.getContentPane().add(open);
+//            frame.pack();
+//            frame.setVisible(true);
+//            open.setVisible(true);
         }
         else {
             Clear();

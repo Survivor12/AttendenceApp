@@ -5,20 +5,17 @@
  */
 package attendanceapp;
 import java.io.*;
-import javax.swing.JLabel;
+import javax.swing.*;
 import java.text.*;
 import java.util.*;
 /**
  *
  * @author Chris
  */
-public class AttendanceGUIList2 extends javax.swing.JFrame {
-    /**
-     * Creates new form AttendanceGUIList2
-     */
-    public AttendanceGUIList2() {
+public class AttendanceGUIList2 extends JFrame {
+    public void AttendanceGUIList2() {
         initComponents();
-        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
