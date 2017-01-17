@@ -172,7 +172,9 @@ public class AttendanceGUILogin extends javax.swing.JFrame {
         jLabel4.setText(null);
         char[] input = jPasswordField1.getPassword();
         if (jTextField4.getText().equals("Username")&&isPasswordCorrect(input)) {
-           
+            AttendanceGUIList2 gui = new AttendanceGUIList2();
+            gui.setVisible(true);
+            setVisible(false);
         }
         else {
             Clear();
