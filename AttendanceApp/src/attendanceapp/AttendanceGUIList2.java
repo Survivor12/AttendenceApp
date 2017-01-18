@@ -16,7 +16,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
     /**
      * Creates new form AttendanceGUIList2
      */
-    public AttendanceGUIList2() {
+    public void AttendanceGUIList2() {
         initComponents();
         }
 
