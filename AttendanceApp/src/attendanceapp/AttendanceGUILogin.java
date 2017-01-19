@@ -4,18 +4,20 @@
  * and open the template in the editor.
  */
 package attendanceapp;
+import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import javax.swing.*;
+
 /**
  *
  * @author S199750655
  */
 public class AttendanceGUILogin extends javax.swing.JFrame {
+    
+    public int exit;
 
-    /**
-     * Creates new form AttendanceGUI
-     */
     public AttendanceGUILogin() {
+        this.exit = 0;
         initComponents();
     }
 
@@ -170,6 +172,7 @@ public class AttendanceGUILogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         jLabel4.setText(null);
         char[] input = jPasswordField1.getPassword();
         if (jTextField4.getText().equals("Username")&&isPasswordCorrect(input)) {
@@ -188,8 +191,13 @@ public class AttendanceGUILogin extends javax.swing.JFrame {
         else {
             Clear();
             jLabel4.setText("Username or password was incorrect.");
+            exit += 1;
+            if (exit == 3){
+                System.exit(0);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -242,6 +250,7 @@ public class AttendanceGUILogin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AttendanceGUILogin().setVisible(true);
+                
             }
         });
     }

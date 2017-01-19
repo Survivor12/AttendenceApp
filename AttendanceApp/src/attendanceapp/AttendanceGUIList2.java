@@ -18,7 +18,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
      */
     public void AttendanceGUIList2() {
         initComponents();
-        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -952,8 +952,8 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
             for (int z=0; z<30; z++){
                 lists[z]=bufferedReader.readLine();
                 jLLists[z].setText(lists[z]);
-                jTFList1[z].setText("jTextField1");
-                jTFList2[z].setText("jTextField32");
+                jTFList1[z].setText("Enter Time");
+                jTFList2[z].setText("Please Enter");
                 jCBList[z].setSelectedIndex(0);
             }
         }
@@ -961,7 +961,7 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
             jLabel37.setText("Error");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+            //submit button below
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JTextField[] jTFList1 = {jTextField2,jTextField3,jTextField4,jTextField5,jTextField6,jTextField7,jTextField8,jTextField9,jTextField10,jTextField11,jTextField12,jTextField13,jTextField14,jTextField15,jTextField16,jTextField17,jTextField18,jTextField19,jTextField20,jTextField21,jTextField22,jTextField23,jTextField24,jTextField25,jTextField26,jTextField27,jTextField28,jTextField29,jTextField30,jTextField31};
         JTextField[] jTFList2 = {jTextField32,jTextField33,jTextField34,jTextField35,jTextField36,jTextField37,jTextField38,jTextField39,jTextField40,jTextField41,jTextField42,jTextField43,jTextField44,jTextField45,jTextField46,jTextField47,jTextField48,jTextField49,jTextField50,jTextField51,jTextField52,jTextField53,jTextField54,jTextField55,jTextField56,jTextField57,jTextField58,jTextField59,jTextField60,jTextField61};
@@ -974,11 +974,11 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
             PrintStream out = new PrintStream(new FileOutputStream(output));
             for (int y=0;y<30;y++){
                 out.print(jLLists[y].getText()+" "+jCBList[y].getSelectedItem()+" ");
-                if (jTFList1[y].getText().equals("jTextField1")) {
+                if (jTFList1[y].getText().equals("Enter Time")) {
                 } else {
                     out.print(jTFList1[y].getText()+" ");
                 }
-                if (jTFList2[y].getText().equals("jTextField32")) {
+                if (jTFList2[y].getText().equals("Please Enter")) {
                     out.println();
                 } else {
                     out.println(jTFList2[y].getText());
@@ -990,12 +990,12 @@ public class AttendanceGUIList2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
     String[] lists = new String[30];
-    String timeStamp = new SimpleDateFormat("MM-dd-yyyy").format(Calendar.getInstance().getTime());
+    String timeStamp = new SimpleDateFormat("MM-dd-yyyy").format(Calendar.getInstance().getTime()); //This recieves the date stamp from the computer
     /**
      * @param args the command line arguments
      */
     private void Date(){
-        jTextField1.setText(timeStamp);
+        jTextField1.setText(timeStamp);     //outputs the time stamp onto the 
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
