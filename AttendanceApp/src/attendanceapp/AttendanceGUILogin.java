@@ -4,18 +4,20 @@
  * and open the template in the editor.
  */
 package attendanceapp;
+import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import javax.swing.*;
+
 /**
  *
  * @author S199750655
  */
 public class AttendanceGUILogin extends javax.swing.JFrame {
+    
+    public int exit;
 
-    /**
-     * Creates new form AttendanceGUI
-     */
     public AttendanceGUILogin() {
+        this.exit = 0;
         initComponents();
     }
 
@@ -170,31 +172,32 @@ public class AttendanceGUILogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         jLabel4.setText(null);
         char[] input = jPasswordField1.getPassword();
         if (jTextField4.getText().equals("Username")&&isPasswordCorrect(input)) {
-            Clear();
-            SwingUtilities.invokeLater(new Runnable() {
-               public void run(){
-                   final AttendanceGUIList2 open = new AttendanceGUIList2();
-                   open.AttendanceGUIList2();
-                   open.setVisible(true);
-                   setVisible(false);
-               } 
+            SwingUtilities.invokeLater(new Runnable(){
+                public void run(){
+                    final AttendanceGUIList2 gui = new AttendanceGUIList2();
+                    gui.AttendanceGUIList2();
+                    gui.setVisible(true);
+                    setVisible(false);
+                }
             });
-//            AttendanceGUIList2 open = new AttendanceGUIList2();
-//            JFrame frame = new JFrame();
-//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//            frame.getContentPane().add(open);
-//            frame.pack();
-//            frame.setVisible(true);
-//            open.setVisible(true);
+//            final AttendanceGUIList2 gui = new AttendanceGUIList2();
+//            gui.setVisible(true);
+//            setVisible(false);
         }
         else {
             Clear();
             jLabel4.setText("Username or password was incorrect.");
+            exit += 1;
+            if (exit == 3){
+                System.exit(0);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -247,6 +250,7 @@ public class AttendanceGUILogin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AttendanceGUILogin().setVisible(true);
+                
             }
         });
     }

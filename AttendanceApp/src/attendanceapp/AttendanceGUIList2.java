@@ -12,7 +12,10 @@ import java.util.*;
  *
  * @author Chris
  */
-public class AttendanceGUIList2 extends JFrame {
+public class AttendanceGUIList2 extends javax.swing.JFrame {
+    /**
+     * Creates new form AttendanceGUIList2
+     */
     public void AttendanceGUIList2() {
         initComponents();
     }
@@ -160,6 +163,7 @@ public class AttendanceGUIList2 extends JFrame {
         jTextField59 = new javax.swing.JTextField();
         jTextField60 = new javax.swing.JTextField();
         jTextField61 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
 
         jLabel38.setText("jLabel38");
 
@@ -170,7 +174,7 @@ public class AttendanceGUIList2 extends JFrame {
         jLabel2.setText("Date");
 
         jTextField1.setEditable(false);
-        jTextField1.setText("07/12/2016");
+        jTextField1.setText(" ");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "BBB4M.-01", "BBB4M.-02", "BMI3C.-01" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -190,6 +194,11 @@ public class AttendanceGUIList2 extends JFrame {
         jLabel68.setText("Time");
 
         jButton1.setText("Submit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Load");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -851,6 +860,8 @@ public class AttendanceGUIList2 extends JFrame {
 
         jScrollPane1.setViewportView(jPanel1);
 
+        jLabel37.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -875,7 +886,9 @@ public class AttendanceGUIList2 extends JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(86, 251, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addComponent(jButton2)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton1))
@@ -899,7 +912,8 @@ public class AttendanceGUIList2 extends JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jLabel37))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -926,26 +940,62 @@ public class AttendanceGUIList2 extends JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Date();
         String inputFile = jComboBox1.getSelectedItem().toString()+"/"+jComboBox1.getSelectedItem().toString()+".txt";
+        JTextField[] jTFList1 = {jTextField2,jTextField3,jTextField4,jTextField5,jTextField6,jTextField7,jTextField8,jTextField9,jTextField10,jTextField11,jTextField12,jTextField13,jTextField14,jTextField15,jTextField16,jTextField17,jTextField18,jTextField19,jTextField20,jTextField21,jTextField22,jTextField23,jTextField24,jTextField25,jTextField26,jTextField27,jTextField28,jTextField29,jTextField30,jTextField31};
+        JTextField[] jTFList2 = {jTextField32,jTextField33,jTextField34,jTextField35,jTextField36,jTextField37,jTextField38,jTextField39,jTextField40,jTextField41,jTextField42,jTextField43,jTextField44,jTextField45,jTextField46,jTextField47,jTextField48,jTextField49,jTextField50,jTextField51,jTextField52,jTextField53,jTextField54,jTextField55,jTextField56,jTextField57,jTextField58,jTextField59,jTextField60,jTextField61};
+        JComboBox[] jCBList = {jComboBox2,jComboBox3,jComboBox4,jComboBox5,jComboBox6,jComboBox7,jComboBox8,jComboBox9,jComboBox10,jComboBox11,jComboBox12,jComboBox13,jComboBox14,jComboBox15,jComboBox16,jComboBox17,jComboBox18,jComboBox19,jComboBox20,jComboBox21,jComboBox22,jComboBox23,jComboBox24,jComboBox25,jComboBox26,jComboBox27,jComboBox28,jComboBox29,jComboBox30,jComboBox31};
         JLabel[] jLLists = {jLabel7,jLabel8,jLabel9,jLabel10,jLabel11,jLabel12,jLabel13,jLabel14,jLabel15,jLabel16,jLabel17,jLabel18,jLabel19,jLabel20,jLabel21,jLabel22,jLabel23,jLabel24,jLabel25,jLabel26,jLabel27,jLabel28,jLabel29,jLabel30,jLabel31,jLabel32,jLabel33,jLabel34,jLabel35,jLabel36};
+        //JTextField[] jTFList1 = {jTextField2,jTextField3,jTextField4,jTextField5,jTextField6,jTextField7,jTextField8,jTextField9,jTextField10,jTextField11,jTextField12,jTextField13,jTextField14,jTextField15,jTextField16,jTextField17,jTextField18,jTextField19,jTextField20,jTextField21,jTextField22,jTextField23,jTextField24,jTextField25,jTextField26,jTextField27,jTextField28,jTextField29,jTextField30,jTextField31};
         try {
             File file = new File(inputFile);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            for (int z=0; z<=29; z++){
+            for (int z=0; z<30; z++){
                 lists[z]=bufferedReader.readLine();
                 jLLists[z].setText(lists[z]);
+                jTFList1[z].setText("Enter Time");
+                jTFList2[z].setText("Please Enter");
+                jCBList[z].setSelectedIndex(0);
             }
-            }catch(Exception a){
-            jTextField32.setText(""+a);
+        }
+        catch(Exception a){
+            jLabel37.setText("Error");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+            //submit button below
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JTextField[] jTFList1 = {jTextField2,jTextField3,jTextField4,jTextField5,jTextField6,jTextField7,jTextField8,jTextField9,jTextField10,jTextField11,jTextField12,jTextField13,jTextField14,jTextField15,jTextField16,jTextField17,jTextField18,jTextField19,jTextField20,jTextField21,jTextField22,jTextField23,jTextField24,jTextField25,jTextField26,jTextField27,jTextField28,jTextField29,jTextField30,jTextField31};
+        JTextField[] jTFList2 = {jTextField32,jTextField33,jTextField34,jTextField35,jTextField36,jTextField37,jTextField38,jTextField39,jTextField40,jTextField41,jTextField42,jTextField43,jTextField44,jTextField45,jTextField46,jTextField47,jTextField48,jTextField49,jTextField50,jTextField51,jTextField52,jTextField53,jTextField54,jTextField55,jTextField56,jTextField57,jTextField58,jTextField59,jTextField60,jTextField61};
+        JComboBox[] jCBList = {jComboBox2,jComboBox3,jComboBox4,jComboBox5,jComboBox6,jComboBox7,jComboBox8,jComboBox9,jComboBox10,jComboBox11,jComboBox12,jComboBox13,jComboBox14,jComboBox15,jComboBox16,jComboBox17,jComboBox18,jComboBox19,jComboBox20,jComboBox21,jComboBox22,jComboBox23,jComboBox24,jComboBox25,jComboBox26,jComboBox27,jComboBox28,jComboBox29,jComboBox30,jComboBox31};
+        JLabel[] jLLists = {jLabel7,jLabel8,jLabel9,jLabel10,jLabel11,jLabel12,jLabel13,jLabel14,jLabel15,jLabel16,jLabel17,jLabel18,jLabel19,jLabel20,jLabel21,jLabel22,jLabel23,jLabel24,jLabel25,jLabel26,jLabel27,jLabel28,jLabel29,jLabel30,jLabel31,jLabel32,jLabel33,jLabel34,jLabel35,jLabel36};
+        try {
+            File output = new File(jComboBox1.getSelectedItem().toString()+"/"+jComboBox1.getSelectedItem().toString()+"_"+jTextField1.getText()+".txt");
+            output.getParentFile().mkdirs(); 
+            output.createNewFile();
+            PrintStream out = new PrintStream(new FileOutputStream(output));
+            for (int y=0;y<30;y++){
+                out.print(jLLists[y].getText()+" "+jCBList[y].getSelectedItem()+" ");
+                if (jTFList1[y].getText().equals("Enter Time")) {
+                } else {
+                    out.print(jTFList1[y].getText()+" ");
+                }
+                if (jTFList2[y].getText().equals("Please Enter")) {
+                    out.println();
+                } else {
+                    out.println(jTFList2[y].getText());
+                }
+            }
+        }
+        catch (Exception e) {
+            jLabel37.setText("Error");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     String[] lists = new String[30];
-    String timeStamp = new SimpleDateFormat("MM/dd/yyyy").format(Calendar.getInstance().getTime());
+    String timeStamp = new SimpleDateFormat("MM-dd-yyyy").format(Calendar.getInstance().getTime()); //This recieves the date stamp from the computer
     /**
      * @param args the command line arguments
      */
     private void Date(){
-        jTextField1.setText(timeStamp);
+        jTextField1.setText(timeStamp);     //outputs the time stamp onto the 
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1043,6 +1093,7 @@ public class AttendanceGUIList2 extends JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
